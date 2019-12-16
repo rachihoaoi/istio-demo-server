@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  creationTimestamp: "2019-12-16T05:45:15Z"
+  generation: 1
+  name: istio-demo-server-destination
+  namespace: default
+  resourceVersion: "48397577"
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/destinationrules/istio-demo-server-destination
+  uid: 3c141909-1fc7-11ea-aa11-fa163e1c3656
+spec:
+  host: istio-demo-server
+  subsets:
+    - labels:
+        version: v1
+      name: v1
+    - labels:
+        version: v2
+        name: v2
+  trafficPolicy:
+    outlierDetection:
+      interval: 10m

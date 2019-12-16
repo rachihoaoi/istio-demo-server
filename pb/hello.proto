@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package hello;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// Generate by: protoc --go_out=plugins=grpc:. hello.proto
+// TODO: REMEMBER TO REMOVE omitempty after generate pb.go                                      //
+// TODO: ls bill.pb.go | xargs -n1 -IX bash -c 'sed s/,omitempty// X > X.tmp && mv X{.tmp,}'    //
+// TODO: otherwise zero value would return to front                                             //
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+option go_package = "pbs";
+
+service Hello {
+    rpc SayHello(HelloReq) returns (HelloResp);
+}
+
+message HelloReq {
+    string name = 1;
+}
+
+message HelloResp {
+    string result = 1;
+}
