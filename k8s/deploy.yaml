@@ -16,14 +16,14 @@ spec:
   template:
     metadata:
       annotations:
-        sidecar.istio.io/inject: "true"
+        sidecar.istio.io/inject: "false"
       labels:
         name: istio-demo-server
         app: istio-demo-server
         version: v1
     spec:
       containers:
-        - image: swr.cn-east-2.myhuaweicloud.com/yb7/istio-demo-server:v1
+        - image: swr.cn-east-2.myhuaweicloud.com/yb7/istio-demo-server:rest-v1
           imagePullPolicy: Always
           name: istio-demo-server
           ports:
